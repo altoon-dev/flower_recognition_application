@@ -1,3 +1,4 @@
+import 'package:flower_recognition_application/pages/discovery/discover_page.dart';
 import 'package:flower_recognition_application/pages/interface/flower_page.dart';
 import 'package:flower_recognition_application/pages/interface/home_page.dart';
 import 'package:flower_recognition_application/pages/interface/main_flower_page.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       builder: (ctx, child){
         ScreenUtil.init(ctx);
         return Theme(data: ThemeData(primarySwatch: Colors.blue),
-            child: MainFlowerPage());
+            child: DiscoverPage());
       },
       debugShowCheckedModeBanner: false,
       title: 'Login Screen',

@@ -1,3 +1,4 @@
+import 'package:flower_recognition_application/unique_text.dart';
 import 'package:flower_recognition_application/widgets/small_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,7 +21,7 @@ class IconTextWidget extends StatelessWidget {
       children: [
         Icon(icon, color: iconColor,),
         SizedBox(width: 5.w,),
-        SmallText(text: text, color: color,),
+        UniqueText(text: text, color: color,),
       ],
     );
   }

@@ -75,7 +75,7 @@ const kFont26Get = TextStyle(
 const kFont26 = TextStyle(
     color:  Colors.black,
     fontFamily: 'Nunito',
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w700,
     fontSize: 26);
 
 
