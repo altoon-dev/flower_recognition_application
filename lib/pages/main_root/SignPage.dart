@@ -1,6 +1,8 @@
+import 'package:flower_recognition_application/design/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 class SignPage extends StatefulWidget {
   const SignPage({Key? key}) : super(key: key);
@@ -13,89 +15,94 @@ class _SignPageState extends State<SignPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFE1EFED),
+      backgroundColor: const Color(0xFFE1EFED),
       body: SafeArea(
-        child: Column(
-          children: [
-            Text('Welcome on Board!', style: GoogleFonts.poppins(fontSize: 31,color: Color(0xFF000000)),),
-            SvgPicture.asset('images/sign_in_icon.svg'),
-            Container(
-              padding: EdgeInsets.all(20),
-              width:400,
-              child:
-              TextField(
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: 'Enter your email:',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 80.h),
+              const Text('Welcome on Board!', style: kFont30),
+              SvgPicture.asset('images/sign_in_icon.svg'),
+              Container(
+                margin: EdgeInsets.all(10),
+                padding:  EdgeInsets.only(left: 20.w,right: 20.w,top: 20.h, ),
+                width:400.w,
+                child:
+                TextField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: 'Enter your email:',
+                    hintStyle: kFont16,
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
                   ),
                 ),
               ),
-            ),
-            Container(
-              padding: EdgeInsets.all(20),
-              width:400,
-              child:
-              TextField(
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  hintText: 'Confirm password:',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
+              Container(
+                padding:  EdgeInsets.only(left: 20.w,right: 20.w, ),
+                margin: EdgeInsets.all(10),
+                width:400.w,
+                child:
+                TextField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
+                    hintText: 'Confirm password:',
+                    hintStyle: kFont16,
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white, width: 0),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
                   ),
                 ),
               ),
-            ),
-            TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                primary: Color(0xFF46B88F), // Text Color
-              ),
-              child: const Text(
-                'Forget Password?',
-                style: TextStyle(fontSize: 24,fontWeight: FontWeight.w400),
-              ),
-            ),
-            Container(
-              width: 300,
-              height: 40,
-              child: OutlinedButton(
+              TextButton(
                 onPressed: () {},
-                style: OutlinedButton.styleFrom(
-                  backgroundColor: Color(0xFF91DABB),
-                  shape: BeveledRectangleBorder(
-                    borderRadius: BorderRadius.circular(1),
-                  ),
+                style: TextButton.styleFrom(
+                  primary: Color(0xFF46B88F), // Text Color
                 ),
-                child: Text(
-                  'REGISTER',
-                  style: GoogleFonts.poppins(
-                      fontSize: 22, fontWeight: FontWeight.w600,color: Colors.white),
+                child: const Text(
+                  'Forget Password?',
+                  style: kFont24SignUp,
                 ),
               ),
-            ),
-            Container(
-              width: 500,
-              alignment: Alignment.bottomCenter,
-              child: InkWell(
-                onTap: () {},
-                child: RichText(
-                  text: TextSpan(
-                    text: "Dont have an account?",
-                    style: GoogleFonts.nunito(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w700),
-                    children: <TextSpan>[
-                      TextSpan(text: ' Sign up', style: GoogleFonts.nunito(
-                          fontSize: 18, fontWeight: FontWeight.w700, color: Color(0xFF46B88F)),
-                      ),
-                    ],
+              SizedBox(
+                width: 300.w,
+                height: 40.h,
+                child: ElevatedButton(
+                  onPressed: () => print("it's pressed"),
+                  style: ElevatedButton.styleFrom(
+                    primary: const Color(0xFF91DABB),
+                    onPrimary: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(32.0),
+                    ),
+                  ),
+                  child: const Text("REGISTER", style: kFont26Get),
+                ),
+              ),
+              SizedBox(height: 5.h,),
+              Container(
+                width: 500.w,
+                alignment: Alignment.bottomCenter,
+                child: InkWell(
+                  onTap: () {},
+                  child: RichText(
+                    text: const TextSpan(
+                      text: "Already have an account?",
+                      style: kFont16,
+                      children: <TextSpan>[
+                        TextSpan(text: ' Sign up', style: kFont16SigIn,)
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
