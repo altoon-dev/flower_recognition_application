@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../design/style.dart';
+import '../../text_icon_widget.dart';
 
 class DiscoverPage extends StatefulWidget {
   const DiscoverPage({Key? key}) : super(key: key);
@@ -58,7 +59,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconTextWidget(icon: Icons.shopping_bag_rounded, text: "How to call it?", color: AppColors.mainBlackColor, iconColor: AppColors.textDefault),
+                    TextIconWidget(icon: Icons.shopping_bag_rounded, text: "How to call it?", color: AppColors.mainBlackColor, iconColor: AppColors.textDefault),
                     Icon(Icons.arrow_forward_ios_sharp, color: AppColors.textDefault,)
                   ],
                 ),
@@ -73,7 +74,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconTextWidget(icon: Icons.bookmark, text: "History", color: AppColors.mainBlackColor, iconColor: AppColors.textDefault),
+                    TextIconWidget(icon: Icons.bookmark, text: "History", color: AppColors.mainBlackColor, iconColor: AppColors.textDefault),
                     Icon(Icons.arrow_forward_ios_sharp, color: AppColors.textDefault,)
                   ],
                 ),
@@ -88,7 +89,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconTextWidget(icon: Icons.medical_information, text: "How to take care?", color: AppColors.mainBlackColor, iconColor: AppColors.textDefault),
+                    TextIconWidget(icon: Icons.medical_information, text: "How to take care?", color: AppColors.mainBlackColor, iconColor: AppColors.textDefault),
                     Icon(Icons.arrow_forward_ios_sharp, color: AppColors.textDefault,)
                   ],
                 ),
@@ -103,12 +104,11 @@ class _DiscoverPageState extends State<DiscoverPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconTextWidget(icon: Icons.question_mark_sharp, text: "Where to find?", color: AppColors.mainBlackColor, iconColor: AppColors.textDefault),
+                    TextIconWidget(icon: Icons.question_mark_sharp, text: "Where to find?", color: AppColors.mainBlackColor, iconColor: AppColors.textDefault),
                     Icon(Icons.arrow_forward_ios_sharp, color: AppColors.textDefault,)
                   ],
                 ),
               ),
-
             ],
           ),
         ),

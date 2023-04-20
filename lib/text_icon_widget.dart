@@ -1,14 +1,14 @@
 import 'package:flower_recognition_application/unique_text.dart';
-import 'package:flower_recognition_application/widgets/small_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class IconTextWidget extends StatelessWidget {
-  final IconData icon;
+
+class TextIconWidget extends StatelessWidget {
   final String text;
+  final IconData icon;
   final Color color;
   final Color iconColor;
-  const IconTextWidget({Key? key,
+  const TextIconWidget({Key? key,
     required this.icon,
     required this.text,
     required this.color,
@@ -19,11 +19,10 @@ class IconTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon, color: iconColor,),
-        SizedBox(width: 5.w,),
         UniqueText(text: text, color: color,),
+        SizedBox(width: 5.w,),
+        Icon(icon, color: iconColor,),
       ],
     );
   }
 }
-

@@ -32,7 +32,7 @@ class _CartPageState extends State<CartPage> {
       ),
       backgroundColor: const Color(0xffE1EFED),
       body: SafeArea(
-        child: Expanded(
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -61,26 +61,17 @@ class _CartPageState extends State<CartPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text('Romantic', style: kFont26,),
-                          RichText(
-                                text: TextSpan(
-                                  text: "Rating: 4.5",
-                                  style: kFont15,
-                                  children: <TextSpan>[
-                                    TextSpan(text: ' (1,300 Ratings)', style: kFont15
-                                    ),
-                                  ],
-                                ),
-                              ),
+                          const Text('Rose', style: kFont26,),
+                          Text('Green', style: kFont20),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               RichText(
                                 text: TextSpan(
-                                  text: "Location: 1.3",
+                                  text: "Price:",
                                   style: kFont15,
                                   children: <TextSpan>[
-                                    TextSpan(text: ' km',
+                                    TextSpan(text: ' \$10',
                                         style: kFont15
                                     ),
                                   ],
@@ -109,6 +100,46 @@ class _CartPageState extends State<CartPage> {
               ),
             ],
           ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 80.h,
+        padding: EdgeInsets.only(top: 10.h, bottom: 10.h, left: 20.w,right: 20.w),
+        decoration: BoxDecoration(
+          color: Colors.grey,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(40),
+            topRight: Radius.circular(40),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              padding: EdgeInsets.only(top: 10.h, bottom: 10.h, left: 10.w,right: 10.w),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.r),
+                color: Colors.white,
+              ),
+                child: Row(
+                  children: [
+                    Text('\$ 102',style: kFont20,),
+                  ],
+                ),
+              ),
+            Container(
+              padding: EdgeInsets.only(top: 10.h, bottom: 10.h, left: 10.w,right: 10.w),
+              decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.r),
+                    color: Colors.white
+                ),
+                child: Row(
+                  children: [
+                    Text('Check out', style: kFont20,)
+                  ],
+                ),
+            ),
+          ],
         ),
       ),
     );

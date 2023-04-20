@@ -31,8 +31,9 @@ class MyApp extends StatelessWidget {
       builder: (ctx, child){
         ScreenUtil.init(ctx);
         return Theme(data: ThemeData(primarySwatch: Colors.blue),
-            child: DiscoverPage());
+            child: CartPage());
       },
+      //DONT RUN HOME_PAGE, its MainFlowerPage everytime idiot
       debugShowCheckedModeBanner: false,
       title: 'Login Screen',
       navigatorKey: navigatorKey,

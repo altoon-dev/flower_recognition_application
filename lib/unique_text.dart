@@ -11,7 +11,7 @@ class UniqueText extends StatelessWidget {
   UniqueText({Key? key, this.color,
     required this.text,
     this.overflow = TextOverflow.ellipsis,
-    this.size = 24,
+    this.size = 12,
     this.height = 1.2
   }) : super(key: key);
 
@@ -22,7 +22,7 @@ class UniqueText extends StatelessWidget {
       overflow: overflow,
       style: TextStyle(
         color: color,
-        fontSize: 20,
+        fontSize: 12,
         fontWeight: FontWeight.w700,
         height: height,
       ),
