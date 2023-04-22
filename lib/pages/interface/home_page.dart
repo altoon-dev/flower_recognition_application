@@ -39,6 +39,18 @@ class _HomePageState extends State<HomePage> {
     return Column(
       children: [
         Container(
+          margin: EdgeInsets.only(left: 20.w,right: 20.w),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text('Trending Flowers', style: kFont20,),
+              Container(child: Text("See All", style: kFont16,),)
+            ],
+          ),
+        ),
+        SizedBox(height: 10.h,),
+        Container(
           height: 250.h,
           child: PageView.builder(
             controller: pageController,
@@ -58,18 +70,7 @@ class _HomePageState extends State<HomePage> {
             activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0.r)),
           ),
         ),
-        SizedBox(height: 10.h,),
-        Container(
-          margin: EdgeInsets.only(left: 20.w,right: 20.w),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Text('Trending Flowers', style: kFont20,),
-              Container(child: Text("See All", style: kFont16,),)
-            ],
-          ),
-        )
+
       ],
     );
   }

@@ -9,6 +9,7 @@ import 'package:flower_recognition_application/pages/main_root/SignPage.dart';
 import 'package:flower_recognition_application/pages/main_root/registration_page.dart';
 import 'package:flower_recognition_application/pages/order/cart.dart';
 import 'package:flower_recognition_application/pages/order/order_history.dart';
+import 'package:flower_recognition_application/testing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
       builder: (ctx, child){
         ScreenUtil.init(ctx);
         return Theme(data: ThemeData(primarySwatch: Colors.blue),
-            child: CartPage());
+            child: MainFlowerPage());
       },
       //DONT RUN HOME_PAGE, its MainFlowerPage everytime idiot
       debugShowCheckedModeBanner: false,

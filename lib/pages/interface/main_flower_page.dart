@@ -1,7 +1,10 @@
+import 'package:flower_recognition_application/design/colors.dart';
 import 'package:flower_recognition_application/design/style.dart';
 import 'package:flower_recognition_application/pages/interface/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 
 class MainFlowerPage extends StatefulWidget {
   const MainFlowerPage({Key? key}) : super(key: key);
@@ -14,13 +17,13 @@ class _MainFlowerPageState extends State<MainFlowerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFE1EFED),
+      backgroundColor: AppColors.backgroundColor,
       body: SafeArea(
         child: Column(
           children: [
-            SizedBox(height: 20.h,),
             CircleAvatar(backgroundImage: const AssetImage('images/shop_page_image.jpg',),radius: 45.r,),
             Text('Welcome Altynbek!', style: kFont18,),
+            //SizedBox(height: 180.h,),
             HomePage(),
             ],
           ),

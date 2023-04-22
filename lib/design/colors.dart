@@ -6,5 +6,6 @@ class AppColors{
   static final Color textDefault = const Color(0xFFAECAA5);
   static final Color textShop = const Color(0xFF377C0D);
   static final Color mainBlackColor = const Color(0xFF332d2b);
+  static final Color backgroundColor = const Color(0xFFE1EFED);
 
 }
