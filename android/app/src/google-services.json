@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "786572955820",
+    "project_id": "flower-recognition-application",
+    "storage_bucket": "flower-recognition-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:786572955820:android:c725ee9fb16511f86b8f09",
+        "android_client_info": {
+          "package_name": "com.example.flower_recognition_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "786572955820-4ffjkrsaalg9iuo4qbjhjv4fa18ptjul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBa_2VzQ1ByczdWTGCfJgPyS_pIDkQ6oyU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "786572955820-4ffjkrsaalg9iuo4qbjhjv4fa18ptjul.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "786572955820-e0he3i3vbnk0nqaings4ndolj9hv07fj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flowerRecognitionApplication.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

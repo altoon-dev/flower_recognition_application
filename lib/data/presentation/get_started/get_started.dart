@@ -5,14 +5,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 
-class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+class GetStartedPage extends StatefulWidget {
+  const GetStartedPage({Key? key}) : super(key: key);
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<GetStartedPage> createState() => _GetStartedPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _GetStartedPageState extends State<GetStartedPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,9 +27,9 @@ class _MainPageState extends State<MainPage> {
               const Text('All Flowers in one click', style: kFont30,),
               SizedBox(height: 30.h),
               Padding(
-                padding: EdgeInsets.only(left: 20.w,right: 20.w),
-                child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis amet, intger fames orci semper bibendum nunc enim. Diam, egestas feugiat et dignissim purus aliquam est viverra semper. Vulputate facilisis consectetur adipiscing congue nibh aenean lorem nam. Sit faucibus nulla praesent consequat faucibus condimentum eget feugiat nisl',
-                  style: kFont16,)
+                  padding: EdgeInsets.only(left: 20.w,right: 20.w),
+                  child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Iaculis amet, intger fames orci semper bibendum nunc enim. Diam, egestas feugiat et dignissim purus aliquam est viverra semper. Vulputate facilisis consectetur adipiscing congue nibh aenean lorem nam. Sit faucibus nulla praesent consequat faucibus condimentum eget feugiat nisl',
+                    style: kFont16,)
               ),
               SizedBox(height: 30.h),
               SizedBox(

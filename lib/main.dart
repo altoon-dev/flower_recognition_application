@@ -1,53 +1,47 @@
-import 'package:flower_recognition_application/pages/discovery/discover_page.dart';
-import 'package:flower_recognition_application/pages/interface/flower_page.dart';
-import 'package:flower_recognition_application/pages/interface/home_page.dart';
-import 'package:flower_recognition_application/pages/interface/main_flower_page.dart';
-import 'package:flower_recognition_application/pages/interface/shop_page.dart';
-import 'package:flower_recognition_application/pages/interface/shops_nearby.dart';
-import 'package:flower_recognition_application/pages/main_root/MainPage.dart';
-import 'package:flower_recognition_application/pages/main_root/SignPage.dart';
-import 'package:flower_recognition_application/pages/main_root/registration_page.dart';
-import 'package:flower_recognition_application/pages/order/cart.dart';
-import 'package:flower_recognition_application/pages/order/order_history.dart';
-import 'package:flower_recognition_application/testing.dart';
+import 'package:flower_recognition_application/data/presentation/dashboard/dashboard.dart';
+import 'package:flower_recognition_application/data/presentation/sign_in/sign_in.dart';
+import 'package:flower_recognition_application/data/repositories/auth_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'bloc/auth_bloc.dart';
 import 'widgets/global_key.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:get/get.dart';
 
 
-void main() async{
+Future<void> main() async {
   await ScreenUtil.ensureScreenSize();
-
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
-  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      builder: (ctx, child){
-        ScreenUtil.init(ctx);
-        return Theme(data: ThemeData(primarySwatch: Colors.blue),
-            child: MainFlowerPage());
-      },
-      //DONT RUN HOME_PAGE, its MainFlowerPage everytime idiot
-      debugShowCheckedModeBanner: false,
-      title: 'Login Screen',
-      navigatorKey: navigatorKey,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return RepositoryProvider(
+      create: (context) => AuthRepository(),
+      child: BlocProvider(
+        create: (context) =>
+            AuthBloc(
+              authRepository: RepositoryProvider.of<AuthRepository>(context),
+            ),
+        child: MaterialApp(
+          home: StreamBuilder<User?>(
+              stream: FirebaseAuth.instance.authStateChanges(),
+              builder: (context, snapshot) {
+                // If the snapshot has user data, then they're already signed in. So Navigating to the Dashboard.
+                if (snapshot.hasData) {
+                  return const Dashboard();
+                }
+                // Otherwise, they're not signed in. Show the sign in page.
+                return SignIn();
+              }),
+        ),
       ),
-      home:// OrderHistory()
-      //FlowerPage()
-     //ShopsNearby()
-      //ShopPage()
-      //SignPage(),
-      MainPage(),
-      //RegistrationPage(),
     );
   }
 }
